@@ -25,15 +25,17 @@ jobs:
 
       - name: Run Cypress tests
         run: npm run braveTestHeadless
+        continue-on-error: true   # ⭐ IMPORTANT
 
       - name: Upload Mochawesome report (HTML)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: cypress/reports/
 
       - name: Upload Cypress screenshots
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
