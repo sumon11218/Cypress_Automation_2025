@@ -25,7 +25,13 @@ describe('Brave Search Functionality', () => {
     })//end of test 1
 
     it('clicks on more button and verifies additional content is shown', () => {
+       cy.intercept(
+        'GET',
+        '**/search*',
+        { fixture: 'brave-search.json' }
+        ).as('search')
        cy.visit(currentUrl)
+       cy.wait('@search')
        cy.get('[id=llm-show-more-button]').click()
        //verify the text contains Cypress is a modern, open-source end-to-end (E2E) testing framework
        cy.get('[id=results]').invoke('text').then((results) => {
