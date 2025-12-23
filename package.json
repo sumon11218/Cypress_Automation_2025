@@ -1,0 +1,20 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+        "braveTest": "npx cypress run --headed --browser chrome --spec 'cypress/e2e/Day1_121525/brave-search.cy.js'",
+        "braveTestHeadless": "npx cypress run --browser chrome --spec 'cypress/e2e/Day1_121525/brave-search.cy.js'",
+        "regression": "npx cypress run --headed --browser chrome --spec 'cypress/e2e/Regression/*.cy.js'",
+        "braveLoopTest": "npx cypress run --headed --browser chrome --spec 'cypress/e2e/Day2_121625/brave-search-loop.cy.js'"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cypress/grep": "^5.0.1",
+    "cypress-mochawesome-reporter": "^4.0.2"
+  }
+  
+}
