@@ -16,11 +16,12 @@ describe('Brave Search Functionality', () => {
 
        // clicks on more button and verifies additional content is shown
        cy.get('[id=llm-show-more-button]').click()
-       
+
        //verify the text contains Cypress is a modern, open-source end-to-end (E2E) testing framework
        cy.get('[id=results]').invoke('text').then((results) => {
             expect(results).to.contain('Cypress is a modern, open-source end-to-end (E2E) testing framework');
        })
+       //for workflow
     })//end of test 2
 
 })//end of describe suite
