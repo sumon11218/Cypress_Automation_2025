@@ -25,23 +25,12 @@ jobs:
 
       - name: Run Cypress tests
         run: npm run braveTestHeadless
-        
-      - name: Merge Mochawesome reports
-        run: npm run merge:reports
 
-      - name: Generate Mochawesome HTML report
-        run: npm run generate:report
-
-      - name: Upload Mochawesome report
+      - name: Upload Mochawesome report (HTML)
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: cypress/reports/html
-
-      - name: Add Mochawesome report link to summary
-        run: |
-          echo "## 🧪 Cypress Test Report" >> $GITHUB_STEP_SUMMARY
-          echo "[📊 Download Mochawesome HTML Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+          path: cypress/reports/
 
       - name: Upload Cypress screenshots
         if: failure()
