@@ -22,6 +22,6 @@ describe('Brave Search Functionality', () => {
             expect(results).to.contain('Cypress is a modern, open-source end-to-end (E2E) testing framework');
        })
        //for workflow
-    })//end of test 2
+    })//end of test 
 
 })//end of describe suite
